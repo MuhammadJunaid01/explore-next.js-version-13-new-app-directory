@@ -5,6 +5,8 @@
     "source.organizeImports": true,
     "source.fixAll": true
   },
+  "tailwindCSS.classAttributes": ["class", "className", "ngClass"],
+
   "editor.inlineSuggest.enabled": true,
   "tailwindCSS.includeLanguages": {
     "javascript": "javascript",
