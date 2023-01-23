@@ -4,8 +4,7 @@ const getData = async (uri: string) => {
     const data = await res.json();
     return data;
   } catch (error) {
-    console.log("error", error);
-    throw new Error("opps! something went wrong!");
+    throw new Error("opps! something went wrong! please, try again. ");
   }
 };
 export default getData;

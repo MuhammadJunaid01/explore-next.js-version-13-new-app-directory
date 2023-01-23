@@ -1,7 +1,7 @@
 import getSingleProduct from "@/lib/fetchData";
 import { ProductType } from "@/lib/types";
 import Image from "next/image";
-import React from "react";
+
 type Props = {
   params: { id: string };
 };

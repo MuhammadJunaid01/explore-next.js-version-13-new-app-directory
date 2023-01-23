@@ -1,12 +1,9 @@
 import getProducts from "@/lib/fetchData";
+import { ProductLayoutProps } from "@/lib/interfaces";
 import { ProductType } from "@/lib/types";
 import Link from "next/link";
-import React, { ReactNode } from "react";
 
-interface Iprops {
-  children: ReactNode;
-}
-const ProductsLayout = async ({ children }: Iprops) => {
+const ProductsLayout = async ({ children }: ProductLayoutProps) => {
   const uri = "https://fakestoreapi.com/products";
   const products: ProductType[] = await getProducts(uri);
 

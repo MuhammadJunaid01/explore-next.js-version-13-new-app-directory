@@ -1,5 +1,4 @@
 import Navigation from "@/ui/navigation";
-
 export default function RootLayout({
   children,
 }: {
