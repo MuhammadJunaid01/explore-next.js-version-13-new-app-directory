@@ -1,6 +1,6 @@
 "use client";
-import { useSelectedLayoutSegments } from "next/navigation";
 import Link from "next/link";
+import { useSelectedLayoutSegments } from "next/navigation";
 interface Iprops {
   href: string;
   children: string;
@@ -10,15 +10,9 @@ const Navigation = ({ href, children }: Iprops) => {
   const active = href === `/${segment}`;
   return (
     <Link
-      style={
-        active
-          ? {
-              borderBottom: "1px solid #476574",
-              textDecoration: "none",
-              color: "black",
-            }
-          : { textDecoration: "none", color: "black" }
-      }
+      className={` cursor-pointer no-underline font-medium text-black sm:mb-7  ${
+        active ? "border-b-2 border-b-indigo-600" : ""
+      }`}
       href={href}
     >
       {children}

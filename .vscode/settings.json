@@ -4,5 +4,15 @@
   "editor.codeActionsOnSave": {
     "source.organizeImports": true,
     "source.fixAll": true
-  }
+  },
+  "editor.inlineSuggest.enabled": true,
+  "tailwindCSS.includeLanguages": {
+    "javascript": "javascript",
+    "html": "HTML"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.wordWrap": "off",
+  "css.validate": false
 }
