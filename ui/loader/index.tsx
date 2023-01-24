@@ -1,10 +1,12 @@
-import Image from "next/image";
-import React from "react";
-import LoaderGif from "public/loader.gif";
+"use client";
+// import Image from "next/image";
+// import LoaderGif from "public/loader.gif";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 const Loader = () => {
   return (
     <div style={{ textAlign: "center", position: "relative" }}>
-      <Image
+      {/* <Image
         style={{ width: "30%", height: "auto", margin: "0 auto" }}
         src={LoaderGif}
         width={500}
@@ -21,7 +23,8 @@ const Loader = () => {
         }}
       >
         please wait!
-      </p>
+      </p> */}
+      <Skeleton count={10} />
     </div>
   );
 };

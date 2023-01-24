@@ -6,7 +6,7 @@ import Navigation from "../navigation";
 const Navbar = (props: NavbarProps) => {
   const [open, setOpen] = useState(false);
   const { paths, logo } = props;
-  console.log("open", open);
+
   return (
     <div className="flex gap-2 justify-between py-3 px-2">
       <div className="">
