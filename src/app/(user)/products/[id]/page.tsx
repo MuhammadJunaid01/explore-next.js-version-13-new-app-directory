@@ -1,6 +1,7 @@
 import getSingleProduct from "@/lib/fetchData";
 import { ProductType } from "@/lib/types";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 type Props = {
   params: { id: string };
 };
@@ -8,6 +9,9 @@ const page = async ({ params }: Props) => {
   const { id } = params;
   const uri: string = `https://fakestoreapi.com/products/${id}`;
   const data: ProductType = await getSingleProduct(uri);
+  if (!data) {
+    return notFound();
+  }
   return (
     <div className="bg-slate-600 shadow-sm text-white text-center p-2 rounded-sm overflow-hidden mt-0 w-80  m-auto">
       <Image
