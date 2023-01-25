@@ -11,6 +11,6 @@ export interface ButtonProps {
   label: string;
   bgColor?: string;
   color?: string;
-  varient: "primary" | "secondary";
-  size?: "large" | "small";
+  varient?: "primary" | "secondary";
+  size?: "lg" | "md" | "sm";
 }

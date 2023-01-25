@@ -4,7 +4,7 @@ const getData = async (uri: string) => {
     const data = await res.json();
     return data;
   } catch (error) {
-    throw new Error("opps! something went wrong, please try again. ");
+    throw new Error("opps!");
   }
 };
 export default getData;

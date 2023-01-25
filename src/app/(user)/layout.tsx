@@ -9,7 +9,7 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body>
-        <div>
+        <div className="">
           <div>
             <Navbar paths={["Home", "About", "Contact", "Products", "Admin"]} />
           </div>
