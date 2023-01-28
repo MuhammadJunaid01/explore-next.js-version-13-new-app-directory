@@ -30,7 +30,7 @@ const Carrusel = ({ data }: CarruselProps) => {
       <div className="carrusel_conent">
         {itemShow.map((item, i) => (
           <div className="carrusel" key={i}>
-            <div className={`${i === 0 || i === 2 ? ` item${i}` : ""}`} key={i}>
+            <div className={`item${i}`} key={i}>
               <h1>id:{item.id}</h1>
               <Image
                 className="carrusel_image"
@@ -41,6 +41,7 @@ const Carrusel = ({ data }: CarruselProps) => {
               />
               <h2>{item.info}</h2>
             </div>
+            <input type="radio" name="" id="" />
           </div>
         ))}
       </div>
