@@ -1,45 +1,48 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import Image, { StaticImageData } from "next/image";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 interface CarruselProps {
   data: { img: string | StaticImageData; info: string; id: number }[];
 }
-const Carrusel = ({ data }: CarruselProps) => {
+const Carousel = ({ data }: CarruselProps) => {
   const [index, setIndex] = useState(0);
+  let timer: number = 5000;
   const itemShow = data.slice(index, index + 3);
   const prev = () => {
     index === 0 ? setIndex(data.length - 3) : setIndex((index) => index + 3);
   };
-  const next = () => {
+
+  const next = useCallback(() => {
     index + 3 === data.length ? setIndex(0) : setIndex((index) => index + 3);
-  };
+  }, [data.length, index]);
   useEffect(() => {
     if (index === data.length) {
       setIndex(0);
     }
     let interval = setInterval(() => {
       next();
-    }, 5000);
+    }, timer);
     return () => clearInterval(interval);
-  }, [data.length, next]);
+  }, [data.length, index, next, timer]);
   return (
     <div className="carrusel_container">
       <h1>hello carrusel </h1>
       <div className="carrusel_conent">
         {itemShow.map((item, i) => (
-          <div className="carrusel" key={i}>
-            <div className={`item${i}`} key={i}>
+          <div className={`carrusel item${i}`} key={i}>
+            <div key={i}>
               <h1>id:{item.id}</h1>
               <Image
-                className="carrusel_image"
+                className={`carrusel_image carrusel_image${i}`}
                 src={item.img}
                 width={300}
                 height={200}
                 alt="img"
               />
-              <h2>{item.info}</h2>
+              <div className={`content${i}`}>
+                <h2>{item.info}</h2>
+              </div>
             </div>
             <input type="radio" name="" id="" />
           </div>
@@ -59,4 +62,4 @@ const Carrusel = ({ data }: CarruselProps) => {
   );
 };
 
-export default Carrusel;
+export default Carousel;
